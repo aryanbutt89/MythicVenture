@@ -84,7 +84,7 @@ void main() {
 			checkClear = true;
 
 		//this prints main menu
-		cout << "\n\t\tMain Menu\n\t1. Start Game\n\t2. Inventory\n\t3. Characters\n\t4. Exit\n\tEnter your Choice: ";
+		cout << "\n\tMain Menu\n\n\t1. Start Game\n\t2. Inventory\n\t3. Characters\n\t4. Exit\n\tEnter your Choice: ";
 
 		cin >> mainMenuSelection; //here this gets input from user
 
@@ -209,7 +209,7 @@ void charInfo(int& hlth, int& exp, int& eneHlth) {
 //This function takes character class and return player attack points
 int classChar(string cls) {
 
-	int max=0, min=0;
+	int max = 0, min = 0;
 	if (invent.weapons[0] != "" || invent.weapons[1] != "" || invent.weapons[2] != "" || invent.weapons[3] != "" || invent.weapons[4] != "") {
 		if (invent.weapons[4] != "") {
 			min = 99;
@@ -274,11 +274,11 @@ void inventry() {
 	for (int i = 0; i < size(invent.lockedWeapons); i++) {
 		if (invent.lockedWeapons[i] == "");
 		else {
-			cout << "\t" << i + 1 << " " + invent.lockedWeapons[i] + "\tUnlock in" << (i + 1) * 11 << " Points" << endl;
+			cout << "\t" << i + 1 << ". " + invent.lockedWeapons[i] + "\tUnlock in " << (i + 1) * 11 << " Points" << endl;
 		}
 	}
 
-	cout << "\n\tFor Purchase Weapons, Enter Weapon Number: ";
+	cout << "\n\tFor Purchase Weapons\n\tEnter Weapon Number: ";
 	cout << "\n\t0. Main menu\n\t99. Exit Game\n\tEnter Option: ";
 	cin >> select;
 	cin.ignore();
@@ -306,7 +306,8 @@ void inventry() {
 			invent.weapons[2] = invent.lockedWeapons[2];
 			invent.lockedWeapons[2] = "";
 			inventry();
-		} else inventry();
+		}
+		else inventry();
 	}
 	else if (select == 4) {
 		if (character.exp >= 40) {
@@ -314,7 +315,8 @@ void inventry() {
 			invent.weapons[3] = invent.lockedWeapons[3];
 			invent.lockedWeapons[3] = "";
 			inventry();
-		} else inventry();
+		}
+		else inventry();
 	}
 	else if (select == 5) {
 		if (character.exp >= 50) {
@@ -322,7 +324,8 @@ void inventry() {
 			invent.weapons[4] = invent.lockedWeapons[4];
 			invent.lockedWeapons[4] = "";
 			inventry();
-		} else inventry();
+		}
+		else inventry();
 	}
 	else if (select == 0) {
 		main();
@@ -343,7 +346,7 @@ void selevel() {
 	{
 		cout << "\n\tSelect Level to Start Game\n\n";
 		for (int i = 1; i <= level.lvl; i++) {
-			cout << "\n\t" << i << ". level " << i << endl;
+			cout << "\n\t" << i << ". Level " << i << endl;
 		}
 		cout << "\n\t0.  Main Menu";
 		cout << "\n\t99. Exit Game";
@@ -399,7 +402,7 @@ void lvl1() {
 	srand(time(0));
 	string startingMessage = "\n\tPlayer Name:\t" + character.characterName + " \n\tPlayer Class:\t" + character.characterRank + "\n\tPlayer Health:\t" + to_string(character.characterHealth) +
 		"\n\tPlayer Exp:\t" + to_string(character.characterExp) +
-		" \n\n\tGame Started:\n\n\tIn the mystical land of Eldoria,\n\ta once-harmonious kingdom faces turmoil as an ancient curse unleashes mythical creatures" +
+		" \n\n\tGame Started;\n\n\tIn the mystical land of Eldoria,\n\ta once-harmonious kingdom faces turmoil as an ancient curse unleashes mythical creatures" +
 		"\n\tand dark forces upon the realm.\n\tAs chaos ensues, a valiant adventurer, recognized for their prowess, is called upon by the wise oracle.\n\n\tPress Enter to Continue Game...";
 
 	for (int i = 0; i < startingMessage.length(); i++) {
@@ -442,7 +445,7 @@ void lvl1() {
 
 // BabyDragon
 void lvl1BDragon() {
-	int enemyAttack = 0, playerAttack = 0, i = 0; 
+	int enemyAttack = 0, playerAttack = 0, i = 0;
 	string choose, selectWays;
 	cout << "\n\tHere is Baby Dragon";
 	while (character.characterHealth > 0) {
