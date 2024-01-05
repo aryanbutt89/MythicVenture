@@ -1054,7 +1054,6 @@ void lvl3() {
 	do
 	{
 		cout << "\n\n\tThere are 4 Unknown Paths\n\tSelect b/w 1 to 4: ";
-
 		cin >> selectWays;
 		if (selectWays == "1" || selectWays == "2" || selectWays == "3" || selectWays == "4") {
 			int randWay = rand() % 4 + 1;
@@ -1309,7 +1308,6 @@ void lvl3tengue() {
 			else {
 				system("cls");
 				continue;
-
 			}
 		}
 		else
@@ -1377,7 +1375,6 @@ void lvl3valkyrie() {
 			else {
 				system("cls");
 				continue;
-
 			}
 		}
 		else
